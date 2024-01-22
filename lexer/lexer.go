@@ -15,6 +15,10 @@ func New(input string) *Lexer {
 	return l
 }
 
+/*
+tokenizes the char(s) under evaluation
+moves the position to the next token by calling the readChar method to eat it :)
+*/
 func (l *Lexer) NextToken() token.Token {
 	var tok token.Token
 

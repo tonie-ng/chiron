@@ -45,6 +45,10 @@ func Load(args []string, username string) {
 		start(os.Stdin, os.Stderr, INTERACTIVEMODE)
 	} else {
 		filename := args[1]
+		if filename[len(filename) -3:] != ".ch" {
+			fmt.Printf("Unrecognizable file format: %s\nProvide a file with a `.ch` extention\n", filename)
+			return
+		}
 		file, err := os.Open(filename)
 		if err != nil {
 			log.Fatalf("Error opening file: %v", err)

@@ -1,7 +1,7 @@
 package repl
 
 const (
-	INTERACTIVEMODE= "interactivemode"
-	FILEMODE = "filemode"
+	INTERACTIVEMODE= "interactive"
+	FILEMODE = "file"
 	PROMPT = "$ "
 )

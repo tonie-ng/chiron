@@ -3,10 +3,10 @@ package lexer
 import "chiron/token"
 
 type Lexer struct {
-	input string
-	position int // current position in input
-	readPosition int // reading position in input (after current char)
-	ch byte // char under evaluation
+	input        string
+	position     int  // current position in input
+	readPosition int  // reading position in input (after current char)
+	ch           byte // char under evaluation
 }
 
 func New(input string) *Lexer {
@@ -84,4 +84,3 @@ func (l *Lexer) NextToken() token.Token {
 	l.readChar()
 	return tok
 }
-

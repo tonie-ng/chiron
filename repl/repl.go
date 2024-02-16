@@ -2,12 +2,13 @@ package repl
 
 import (
 	"bufio"
-	"chiron/lexer"
-	"chiron/token"
 	"fmt"
 	"io"
 	"log"
 	"os"
+
+	"chiron/lexer"
+	"chiron/token"
 )
 
 func start(input io.Reader, output io.Writer, mode string) {
@@ -35,7 +36,6 @@ func start(input io.Reader, output io.Writer, mode string) {
 }
 
 func Load(args []string, username string) {
-
 	if len(args) > 2 {
 		log.Fatal("Usage: chiron <filename>")
 	}
@@ -45,7 +45,7 @@ func Load(args []string, username string) {
 		start(os.Stdin, os.Stderr, INTERACTIVEMODE)
 	} else {
 		filename := args[1]
-		if filename[len(filename) -3:] != ".ch" {
+		if filename[len(filename)-3:] != ".ch" {
 			fmt.Printf("Unrecognizable file format: %s\nProvide a file with a `.ch` extention\n", filename)
 			return
 		}
@@ -53,7 +53,7 @@ func Load(args []string, username string) {
 		if err != nil {
 			log.Fatalf("Error opening file: %v", err)
 		}
-		defer func () {
+		defer func() {
 			if err := file.Close(); err != nil {
 				fmt.Fprintf(os.Stdout, "Error closing file: %v\n", err)
 			}

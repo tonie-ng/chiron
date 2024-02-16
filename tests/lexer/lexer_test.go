@@ -1,9 +1,10 @@
 package tests
 
 import (
+	"testing"
+
 	"chiron/lexer"
 	"chiron/token"
-	"testing"
 )
 
 func TestNextToken(t *testing.T) {
@@ -25,7 +26,7 @@ func TestNextToken(t *testing.T) {
 	`
 
 	tests := []struct {
-		expectedType token.TokenType
+		expectedType    token.TokenType
 		expectedLiteral string
 	}{
 		{token.LET, "let"},

@@ -1,5 +1,5 @@
 # Chiron
-A lightweight interpreter.
+A lightweight interpreter based on Thorsten Ball's Writing an interpreter in Go.
 
 ## Installation.
 To install Chiron, follow these steps:
